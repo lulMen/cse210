@@ -6,6 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Added additional Menu class for the displayed menu
         Journal myJournal = new Journal();
         int selection;
 
