@@ -10,6 +10,7 @@ class Program
         int currentEndVerse = 6;
         string currentText = "Trust in the Lord with all thine heart and lean not unto thine own understanding; in all thy ways acknowledge him, and he shall direct thy paths.";
         int wordsToHide = 4;
+        string input;
         bool programRunning = true;
 
         Reference currentReference = new Reference(currentBook, currentChapter, currentVerse, currentEndVerse);
@@ -19,25 +20,18 @@ class Program
         {
             Console.WriteLine(currentScripture.GetDisplayText() + "\n");
             Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-            string input = Console.ReadLine();
-
-            currentScripture.HideRandomWords(wordsToHide);
+            input = Console.ReadLine();
 
             if (input == "quit")
             {
                 programRunning = false;
-            }
-
-            if (currentScripture.IsCompletelyHidden())
+            } else if (!currentScripture.IsCompletelyHidden())
             {
+                currentScripture.HideRandomWords(wordsToHide);
                 Console.Clear();
-                Console.WriteLine(currentScripture.GetDisplayText() + "\n");
-                Console.WriteLine("Press enter to continue or type 'quit' to finish:");
-                _ = Console.ReadLine();
+            } else {
+                programRunning = false;
             }
-
-            Console.Clear();
-
         } while (programRunning);
     }
 }
