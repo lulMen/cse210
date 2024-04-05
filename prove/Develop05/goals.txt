@@ -1,0 +1,7 @@
+score,110
+1,sg 1,sdesc 1,10,True
+1,sg 2,sdesc 2,20,False
+2,eg 1,edesc 1,10
+2,eg 2,edesc 2,20
+3,cg 1,cdesc 1,40,True,3,3,30
+3,cg 2,cdesc 2,20,False,0,5,100
